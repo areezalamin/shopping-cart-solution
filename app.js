@@ -21,7 +21,6 @@ function updateShoppingCart(calculation, inputValue, allAmount, price, totalAmou
         if (calculation == true) {
             const totalCostValueChange = parseInt(totalCostValue)
             const totalCostValueFinal = totalCostValueChange - price;
-            console.log(totalCostValueFinal)
             totalCost.innerText = totalCostValueFinal;
         }
         else if (calculation == false) {
@@ -34,17 +33,49 @@ function updateShoppingCart(calculation, inputValue, allAmount, price, totalAmou
     
 }
 
+function forPercentage(calculation, price) {
+    const subTotalCost = document.getElementById('sub-total')
+    const subTotalCostValue = subTotalCost.innerText
+
+    if (calculation == true) {
+        const subTotalCostValueChange = parseInt(subTotalCostValue)
+        const subTotalCostValueFinal = subTotalCostValueChange - price;
+        subTotalCost.innerText = subTotalCostValueFinal;
+        // const subTotalCostValueFinalForTax = subTotalCostValueFinal / 10
+        // subTotalCost.innerText = subTotalCostValueFinalForTax
+    }
+    else if (calculation == false) {
+        const subTotalCostValueChange = parseInt(subTotalCostValue)
+        const subTotalCostValueFinal = subTotalCostValueChange + price;
+        subTotalCost.innerText = subTotalCostValueFinal;
+        // const subTotalCostValueFinalForTax = subTotalCostValueFinal / 10
+        // subTotalCost.innerText = subTotalCostValueFinalForTax
+    }
+
+}
+
+function forTax() {
+    const taxAmount = document.getElementById('for-tax')
+    const taxForSubTotalCost = document.getElementById('sub-total')
+    const taxForSubTotalCostValue = taxForSubTotalCost.innerText
+    const taxForSubTotalCostValueChange = parseInt(taxForSubTotalCostValue)
+
+    const subTotalCostValueFinalForTax = taxForSubTotalCostValueChange / 10
+    taxAmount.innerText = subTotalCostValueFinalForTax
+    
+}
+
+
+
+
 
 document.getElementById('for-nagative').addEventListener('click', function(){
 
     updateShoppingCart(true, 'for-number', 'total-cost', 1219)
 
 
-    const subTotalCost = document.getElementById('sub-total')
-    const subTotalCostValue = subTotalCost.innerText
-    const subTotalCostValueChange = parseInt(subTotalCostValue)
-    const subTotalCostValueFinal = subTotalCostValueChange - 1219;
-    subTotalCost.innerText = subTotalCostValueFinal;
+    forPercentage(true, 1219)
+    forTax()
 
 
 })
@@ -67,11 +98,16 @@ document.getElementById('for-positive').addEventListener('click', function(){
     // totalCost.innerText = totalCostValueFinal;
 
 
-    const subTotalCost = document.getElementById('sub-total')
-    const subTotalCostValue = subTotalCost.innerText
-    const subTotalCostValueChange = parseInt(subTotalCostValue)
-    const subTotalCostValueFinal = subTotalCostValueChange + 1219;
-    subTotalCost.innerText = subTotalCostValueFinal;
+    // const subTotalCost = document.getElementById('sub-total')
+    // const subTotalCostValue = subTotalCost.innerText
+    // console.log(subTotalCostValue)
+    // const subTotalCostValueChange = parseInt(subTotalCostValue)
+    // const subTotalCostValueFinal = subTotalCostValueChange + 1219;
+    // subTotalCost.innerText = subTotalCostValueFinal;
+
+    // console.log(subTotalCostValueFinal)
+    forPercentage(false, 1219)
+    forTax()
 
 })
 
@@ -79,11 +115,15 @@ document.getElementById('for-case-nagative').addEventListener('click', function(
     updateShoppingCart(true, 'for-case-number', 'case-total-cost', 59)
 
 
-    const subTotalCost = document.getElementById('sub-total')
-    const subTotalCostValue = subTotalCost.innerText
-    const subTotalCostValueChange = parseInt(subTotalCostValue)
-    const subTotalCostValueFinal = subTotalCostValueChange - 59;
-    subTotalCost.innerText = subTotalCostValueFinal;
+    // const subTotalCost = document.getElementById('sub-total')
+    // const subTotalCostValue = subTotalCost.innerText
+    // const subTotalCostValueChange = parseInt(subTotalCostValue)
+    // const subTotalCostValueFinal = subTotalCostValueChange - 59;
+    // subTotalCost.innerText = subTotalCostValueFinal;
+
+    // console.log(subTotalCostValueFinal)
+    forPercentage(true, 59)
+    forTax()
 })
 
 
@@ -91,9 +131,15 @@ document.getElementById('for-case-positive').addEventListener('click', function(
     updateShoppingCart(false, 'for-case-number', 'case-total-cost', 59)
 
 
-    const subTotalCost = document.getElementById('sub-total')
-    const subTotalCostValue = subTotalCost.innerText
-    const subTotalCostValueChange = parseInt(subTotalCostValue)
-    const subTotalCostValueFinal = subTotalCostValueChange + 59;
-    subTotalCost.innerText = subTotalCostValueFinal;
+    // const subTotalCost = document.getElementById('sub-total')
+    // const subTotalCostValue = subTotalCost.innerText
+    // const subTotalCostValueChange = parseInt(subTotalCostValue)
+    // const subTotalCostValueFinal = subTotalCostValueChange + 59;
+    // subTotalCost.innerText = subTotalCostValueFinal;
+
+    forPercentage(false, 59)
+    forTax()
 })
+
+// const forTax = document.getElementById('for-tax')
+// const forTaxTotal = 
