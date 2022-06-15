@@ -66,6 +66,19 @@ function forTax() {
 }
 
 
+function forTotalAmount(){
+    const overallAmount = document.getElementById('for-total')
+    const taxAmount = document.getElementById('for-tax')
+    const taxAmountValue = taxAmount.innerText
+    const taxAmountValueChange = parseInt(taxAmountValue)
+    const taxForSubTotalCost = document.getElementById('sub-total')
+    const taxForSubTotalCostValue = taxForSubTotalCost.innerText
+    const taxForSubTotalCostValueChange = parseInt(taxForSubTotalCostValue)
+    overallAmount.innerText = taxAmountValueChange + taxForSubTotalCostValueChange;
+    
+    
+}
+
 
 
 
@@ -76,6 +89,7 @@ document.getElementById('for-nagative').addEventListener('click', function(){
 
     forPercentage(true, 1219)
     forTax()
+    forTotalAmount()
 
 
 })
@@ -108,6 +122,7 @@ document.getElementById('for-positive').addEventListener('click', function(){
     // console.log(subTotalCostValueFinal)
     forPercentage(false, 1219)
     forTax()
+    forTotalAmount()
 
 })
 
@@ -124,6 +139,7 @@ document.getElementById('for-case-nagative').addEventListener('click', function(
     // console.log(subTotalCostValueFinal)
     forPercentage(true, 59)
     forTax()
+    forTotalAmount()
 })
 
 
@@ -139,6 +155,7 @@ document.getElementById('for-case-positive').addEventListener('click', function(
 
     forPercentage(false, 59)
     forTax()
+    forTotalAmount()
 })
 
 // const forTax = document.getElementById('for-tax')
