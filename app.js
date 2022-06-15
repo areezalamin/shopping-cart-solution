@@ -41,15 +41,13 @@ function forPercentage(calculation, price) {
         const subTotalCostValueChange = parseInt(subTotalCostValue)
         const subTotalCostValueFinal = subTotalCostValueChange - price;
         subTotalCost.innerText = subTotalCostValueFinal;
-        // const subTotalCostValueFinalForTax = subTotalCostValueFinal / 10
-        // subTotalCost.innerText = subTotalCostValueFinalForTax
+
     }
     else if (calculation == false) {
         const subTotalCostValueChange = parseInt(subTotalCostValue)
         const subTotalCostValueFinal = subTotalCostValueChange + price;
         subTotalCost.innerText = subTotalCostValueFinal;
-        // const subTotalCostValueFinalForTax = subTotalCostValueFinal / 10
-        // subTotalCost.innerText = subTotalCostValueFinalForTax
+
     }
 
 }
@@ -80,8 +78,6 @@ function forTotalAmount(){
 }
 
 
-
-
 document.getElementById('for-nagative').addEventListener('click', function(){
 
     updateShoppingCart(true, 'for-number', 'total-cost', 1219)
@@ -98,28 +94,6 @@ document.getElementById('for-positive').addEventListener('click', function(){
 
     updateShoppingCart(false, 'for-number', 'total-cost', 1219)
 
-    // const forPositiveNumber = document.getElementById('for-number')
-    // const forPositiveNumberValue = forPositiveNumber.value ;
-    // const forPositiveNumberValueChange = parseInt(forPositiveNumberValue)
-    // const forIncreasePositiveNumberValue = forPositiveNumberValueChange + 1;
-    // forPositiveNumber.value = parseInt(forIncreasePositiveNumberValue);
-
-
-    // const totalCost = document.getElementById('total-cost')
-    // const totalCostValue = totalCost.innerText
-    // const totalCostValueChange = parseInt(totalCostValue)
-    // const totalCostValueFinal = totalCostValueChange + 1219;
-    // totalCost.innerText = totalCostValueFinal;
-
-
-    // const subTotalCost = document.getElementById('sub-total')
-    // const subTotalCostValue = subTotalCost.innerText
-    // console.log(subTotalCostValue)
-    // const subTotalCostValueChange = parseInt(subTotalCostValue)
-    // const subTotalCostValueFinal = subTotalCostValueChange + 1219;
-    // subTotalCost.innerText = subTotalCostValueFinal;
-
-    // console.log(subTotalCostValueFinal)
     forPercentage(false, 1219)
     forTax()
     forTotalAmount()
@@ -129,14 +103,6 @@ document.getElementById('for-positive').addEventListener('click', function(){
 document.getElementById('for-case-nagative').addEventListener('click', function() {
     updateShoppingCart(true, 'for-case-number', 'case-total-cost', 59)
 
-
-    // const subTotalCost = document.getElementById('sub-total')
-    // const subTotalCostValue = subTotalCost.innerText
-    // const subTotalCostValueChange = parseInt(subTotalCostValue)
-    // const subTotalCostValueFinal = subTotalCostValueChange - 59;
-    // subTotalCost.innerText = subTotalCostValueFinal;
-
-    // console.log(subTotalCostValueFinal)
     forPercentage(true, 59)
     forTax()
     forTotalAmount()
@@ -146,17 +112,8 @@ document.getElementById('for-case-nagative').addEventListener('click', function(
 document.getElementById('for-case-positive').addEventListener('click', function() {
     updateShoppingCart(false, 'for-case-number', 'case-total-cost', 59)
 
-
-    // const subTotalCost = document.getElementById('sub-total')
-    // const subTotalCostValue = subTotalCost.innerText
-    // const subTotalCostValueChange = parseInt(subTotalCostValue)
-    // const subTotalCostValueFinal = subTotalCostValueChange + 59;
-    // subTotalCost.innerText = subTotalCostValueFinal;
-
     forPercentage(false, 59)
     forTax()
     forTotalAmount()
 })
 
-// const forTax = document.getElementById('for-tax')
-// const forTaxTotal = 
